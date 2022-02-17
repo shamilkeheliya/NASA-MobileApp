@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
                             visible: searchKey != '',
                             child: IconButton(
                               onPressed: () {
-                                searchKeyTEC.clear;
+                                searchKeyTEC.clear();
                                 setState(() {
                                   searchKey = '';
                                 });
