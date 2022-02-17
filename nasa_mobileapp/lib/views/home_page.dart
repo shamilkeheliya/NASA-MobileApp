@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:nasa_mobileapp/themeData/theme_manager.dart';
 import 'package:nasa_mobileapp/utilities/appBar.dart';
 import 'package:nasa_mobileapp/utilities/background.dart';
-import 'package:nasa_mobileapp/utilities/const.dart';
 import 'package:nasa_mobileapp/utilities/drawer.dart';
 import 'package:provider/provider.dart';
 
@@ -13,7 +12,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late String searchKey;
+  String searchKey = '';
   bool isValidate = false;
   TextEditingController searchKeyTEC = TextEditingController();
   GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey();
@@ -56,11 +55,19 @@ class _HomePageState extends State<HomePage> {
                               color: Theme.of(context).canvasColor,
                             ),
                           ),
-                          suffixIcon: IconButton(
-                            onPressed: searchKeyTEC.clear,
-                            icon: Icon(
-                              Icons.clear,
-                              color: Theme.of(context).canvasColor,
+                          suffixIcon: Visibility(
+                            visible: searchKey != '',
+                            child: IconButton(
+                              onPressed: () {
+                                searchKeyTEC.clear;
+                                setState(() {
+                                  searchKey = '';
+                                });
+                              },
+                              icon: Icon(
+                                Icons.clear,
+                                color: Theme.of(context).canvasColor,
+                              ),
                             ),
                           ),
                         ),
