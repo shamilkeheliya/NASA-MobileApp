@@ -8,7 +8,7 @@ AppBar homePageAppBar(context, theme, _scaffoldKey) {
     automaticallyImplyLeading: false,
     centerTitle: true,
     title: Text(
-      'NASA',
+      'TITLE',
       style: TextStyle(
         fontFamily: kMainFontFamily,
         fontSize: 30,
