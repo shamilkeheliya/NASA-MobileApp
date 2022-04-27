@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -5,6 +6,7 @@ import 'package:nasa_mobileapp/themeData/theme_manager.dart';
 import 'package:nasa_mobileapp/utilities/appBar.dart';
 import 'package:nasa_mobileapp/utilities/background.dart';
 import 'package:nasa_mobileapp/utilities/drawer.dart';
+import 'package:nasa_mobileapp/views/viewList.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 
@@ -122,7 +124,7 @@ class _HomePageState extends State<HomePage> {
           isValidate = searchKeyTEC.text.isEmpty ? true : false;
         });
         if (searchKeyTEC.text.isNotEmpty) {
-          getData(searchKey);
+          changePage(searchKey);
         }
       },
       style: ElevatedButton.styleFrom(
@@ -220,7 +222,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Future<void> getData(searchKey) async {
+  Future<void> changePage(searchKey) async {
     setState(() {
       isLoading = true;
     });
@@ -270,12 +272,20 @@ class _HomePageState extends State<HomePage> {
     }
 
     http.Response response = await http.get(url);
+    if (response.statusCode == 200) {
+      setState(() {
+        isLoading = false;
+      });
 
-    print(response.statusCode);
-    print(response.body);
-
-    setState(() {
-      isLoading = false;
-    });
+      var data = jsonDecode(response.body);
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) =>
+              ViewList(url, data, Theme.of(context).brightness),
+        ),
+      );
+      print(data);
+    }
   }
 }
