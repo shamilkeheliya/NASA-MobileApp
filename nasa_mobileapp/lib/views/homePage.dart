@@ -2,10 +2,9 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:nasa_mobileapp/customWidgets/homePageTopIcons.dart';
 import 'package:nasa_mobileapp/themeData/theme_manager.dart';
-import 'package:nasa_mobileapp/utilities/appBar.dart';
 import 'package:nasa_mobileapp/utilities/background.dart';
-import 'package:nasa_mobileapp/utilities/drawer.dart';
 import 'package:nasa_mobileapp/views/viewList.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
@@ -34,86 +33,110 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Consumer<ThemeNotifier>(
       builder: (context, theme, child) => Scaffold(
+        appBar: AppBar(toolbarHeight: 0),
         backgroundColor: Theme.of(context).primaryColor,
-        appBar: homePageAppBar(context, theme, _scaffoldKey),
         body: ModalProgressHUD(
           inAsyncCall: isLoading,
           child: Scaffold(
             key: _scaffoldKey,
             backgroundColor: Theme.of(context).primaryColor,
-            endDrawer: homePageDrawer(context, theme),
-            body: backgroundBody(theme, buildBody()),
+            body: backgroundBody(theme, buildBody(theme)),
           ),
         ),
       ),
     );
   }
 
-  Center buildBody() {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              TextField(
-                onChanged: (value) {
-                  setState(() {
-                    searchKey = value;
-                  });
-                },
-                autofocus: true,
-                style: TextStyle(color: Theme.of(context).canvasColor),
-                controller: searchKeyTEC,
-                decoration: InputDecoration(
-                  hintText: 'Search',
-                  errorText: isValidate ? 'Cannot Search Empty' : null,
-                  border: const OutlineInputBorder(),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Theme.of(context).canvasColor,
-                    ),
-                  ),
-                  suffixIcon: Visibility(
-                    visible: searchKey != '',
-                    child: IconButton(
-                      onPressed: () {
-                        searchKeyTEC.clear();
-                        setState(() {
-                          searchKey = '';
-                        });
-                      },
-                      icon: Icon(
-                        Icons.clear,
-                        color: Theme.of(context).canvasColor,
+  Column buildBody(theme) {
+    return Column(
+      children: [
+        HomePageTopIconsRow(theme: theme),
+        Flexible(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.all(50),
+                            child: Image(
+                              image: AssetImage('images/logo.png'),
+                            ),
+                          ),
+                          TextField(
+                            onChanged: (value) {
+                              setState(() {
+                                searchKey = value;
+                              });
+                            },
+                            autofocus: true,
+                            style:
+                                TextStyle(color: Theme.of(context).canvasColor),
+                            controller: searchKeyTEC,
+                            decoration: InputDecoration(
+                              hintText: 'Search',
+                              errorText:
+                                  isValidate ? 'Cannot Search Empty' : null,
+                              border: const OutlineInputBorder(),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Theme.of(context).canvasColor,
+                                ),
+                              ),
+                              suffixIcon: Visibility(
+                                visible: searchKey != '',
+                                child: IconButton(
+                                  onPressed: () {
+                                    searchKeyTEC.clear();
+                                    setState(() {
+                                      searchKey = '';
+                                    });
+                                  },
+                                  icon: Icon(
+                                    Icons.clear,
+                                    color: Theme.of(context).canvasColor,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 15),
+                          Visibility(
+                              visible: !showFilters, child: searchButton()),
+                          Visibility(
+                              visible: !showFilters,
+                              child: const SizedBox(height: 20)),
+                          showFilters
+                              ? buildFilter()
+                              : TextButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      showFilters = true;
+                                    });
+                                  },
+                                  child: const Text('Show Filters'),
+                                ),
+                          Visibility(
+                              visible: showFilters,
+                              child: const SizedBox(height: 20)),
+                          Visibility(
+                              visible: showFilters, child: searchButton()),
+                        ],
                       ),
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 15),
-              Visibility(visible: !showFilters, child: searchButton()),
-              Visibility(
-                  visible: !showFilters, child: const SizedBox(height: 20)),
-              showFilters
-                  ? buildFilter()
-                  : TextButton(
-                      onPressed: () {
-                        setState(() {
-                          showFilters = true;
-                        });
-                      },
-                      child: const Text('Show Filters'),
-                    ),
-              Visibility(
-                  visible: showFilters, child: const SizedBox(height: 20)),
-              Visibility(visible: showFilters, child: searchButton()),
-            ],
+              ],
+            ),
           ),
         ),
-      ),
+      ],
     );
   }
 
@@ -285,7 +308,7 @@ class _HomePageState extends State<HomePage> {
               ViewList(url, data, Theme.of(context).brightness),
         ),
       );
-      print(data);
+      //print(data);
     }
   }
 }

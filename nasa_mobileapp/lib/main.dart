@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nasa_mobileapp/themeData/theme_manager.dart';
-import 'package:nasa_mobileapp/views/home_page.dart';
+import 'package:nasa_mobileapp/views/homePage.dart';
 import 'package:provider/provider.dart';
 
 void main() {
