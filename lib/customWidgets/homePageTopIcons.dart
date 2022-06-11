@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nasa_mobileapp/views/infoPage.dart';
+import 'package:nasa_mobileapp/utilities/const.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePageTopIconsRow extends StatelessWidget {
   var theme;
@@ -24,9 +25,10 @@ class HomePageTopIconsRow extends StatelessWidget {
           ),
         ),
         IconButton(
-          onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => InfoPage()));
+          onPressed: () async {
+            if (!await launchUrl(Uri.parse(kRepoURL))) {
+              throw 'Could not launch About App';
+            }
           },
           icon: Icon(
             Icons.info_outline,

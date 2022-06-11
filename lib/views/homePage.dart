@@ -40,7 +40,10 @@ class _HomePageState extends State<HomePage> {
           child: Scaffold(
             key: _scaffoldKey,
             backgroundColor: Theme.of(context).primaryColor,
-            body: backgroundBody(theme, buildBody(theme)),
+            body: BackgroundBody(
+              theme: theme,
+              child: buildBody(theme),
+            ),
           ),
         ),
       ),
