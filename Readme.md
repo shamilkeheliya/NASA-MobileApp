@@ -1,7 +1,7 @@
-# NASA Images 
+# NASA Images (Under Development)
 ### Mobile Application - Flutter
 
-This mobile application created for NASA image library using Flutter.
+This mobile application was created for the NASA image library using Flutter.
 
 ## Screen Shots
 ### Light Theme
