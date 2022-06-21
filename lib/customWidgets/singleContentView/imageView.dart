@@ -2,10 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class ImageView extends StatelessWidget {
-  var index, url;
+  var index, data;
   ImageView({
     required this.index,
-    required this.url,
+    required this.data,
   });
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class ImageView extends StatelessWidget {
           child: Hero(
             tag: 'hero$index',
             child: CachedNetworkImage(
-              imageUrl: url,
+              imageUrl: data['links'][0]['href'],
               placeholder: (context, url) => Transform.scale(
                 scale: 0.3,
                 child: const CircularProgressIndicator(),

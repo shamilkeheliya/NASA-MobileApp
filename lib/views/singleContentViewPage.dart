@@ -41,16 +41,12 @@ class _SingleContentViewPageState extends State<SingleContentViewPage> {
       children: [
         ImageView(
           index: widget.index,
-          url: widget.data['links'][0]['href'],
+          data: widget.data,
         ),
         TextView(
           title: widget.data['data'][0]['title'],
           description: widget.data['data'][0]['description'],
           textColor: Theme.of(context).canvasColor,
-        ),
-        OtherImagesView(
-          jsonURL: widget.data['href'],
-          color: Theme.of(context).canvasColor,
         ),
       ],
     );

@@ -49,7 +49,7 @@ class _ViewListState extends State<ViewList> {
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
             onPressed: () {
               changePage(index, list[index]);
-              //print(list[index]['links'][0]['href']);
+              //print(list[index]);
             },
             child: CustomDetailCard(
               index: index.toString(),
