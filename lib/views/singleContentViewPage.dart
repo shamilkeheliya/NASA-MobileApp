@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:nasa_mobileapp/customWidgets/singleContentView/imageView.dart';
-import 'package:nasa_mobileapp/customWidgets/singleContentView/otherImages.dart';
 import 'package:nasa_mobileapp/customWidgets/singleContentView/textView.dart';
 import 'package:nasa_mobileapp/themeData/theme_manager.dart';
 import 'package:nasa_mobileapp/utilities/background.dart';
 import 'package:provider/provider.dart';
 
 class SingleContentViewPage extends StatefulWidget {
-  String index;
+  String index, imageURL;
   var data;
-  SingleContentViewPage(this.index, this.data);
+  SingleContentViewPage({
+    required this.index,
+    required this.data,
+    required this.imageURL,
+  });
 
   @override
   _SingleContentViewPageState createState() => _SingleContentViewPageState();
@@ -39,14 +42,14 @@ class _SingleContentViewPageState extends State<SingleContentViewPage> {
   ListView buildBody() {
     return ListView(
       children: [
-        ImageView(
-          index: widget.index,
-          data: widget.data,
-        ),
         TextView(
           title: widget.data['data'][0]['title'],
           description: widget.data['data'][0]['description'],
           textColor: Theme.of(context).canvasColor,
+        ),
+        ImageView(
+          index: widget.index,
+          url: widget.imageURL,
         ),
       ],
     );
