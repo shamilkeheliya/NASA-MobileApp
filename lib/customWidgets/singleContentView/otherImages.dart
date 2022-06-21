@@ -1,6 +1,6 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:nasa_mobileapp/utilities/sql.dart';
 import 'package:http/http.dart' as http;
 
@@ -36,27 +36,13 @@ class _OtherImagesViewState extends State<OtherImagesView> {
   @override
   Widget build(BuildContext context) {
     return otherImages.toString() == '[]'
-        ? const SizedBox() //: SizedBox();
-        : FutureBuilder(
-            future: api.getData(''),
-            builder: (BuildContext context, snapshot) {
-              return ListView.builder(
-                scrollDirection: Axis.horizontal,
-                shrinkWrap: true,
-                itemBuilder: (context, index) => MaterialButton(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-                  onPressed: () {
-                    //changePage(index, list[index]);
-                    //print(list[index]['links'][0]['href']);
-                  },
-                  child: Container(
-                    child: Text('Shamil'),
-                  ),
-                ),
-                itemCount: otherImages.length,
-              );
-            },
+        ? const SpinKitPouringHourGlassRefined(
+            color: Colors.black,
+            size: 50.0,
+          )
+        : Wrap(
+            direction: Axis.vertical,
+            children: otherImages.map((index) => Text('Item $index')).toList(),
           );
   }
 }

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 class TextView extends StatelessWidget {
   late String title, description;
+  Color textColor;
   TextView({
     required this.title,
     required this.description,
+    required this.textColor,
   });
 
   @override
@@ -17,15 +19,19 @@ class TextView extends StatelessWidget {
           Text(
             title,
             maxLines: 10,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 35,
               fontWeight: FontWeight.bold,
+              color: textColor,
             ),
           ),
           Text(
             description,
             maxLines: 10,
-            style: const TextStyle(fontSize: 16),
+            style: TextStyle(
+              fontSize: 16,
+              color: textColor,
+            ),
           ),
         ],
       ),

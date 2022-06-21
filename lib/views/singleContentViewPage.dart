@@ -46,6 +46,7 @@ class _SingleContentViewPageState extends State<SingleContentViewPage> {
         TextView(
           title: widget.data['data'][0]['title'],
           description: widget.data['data'][0]['description'],
+          textColor: Theme.of(context).canvasColor,
         ),
         OtherImagesView(widget.data['href']),
       ],
