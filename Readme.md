@@ -8,6 +8,7 @@ This mobile application was created for the NASA image library using Flutter.
 
 # Features
  - Working on both Android and iOS devices
+ - Light & Dark themes
 
 # To Do
  - Function to save images to device
