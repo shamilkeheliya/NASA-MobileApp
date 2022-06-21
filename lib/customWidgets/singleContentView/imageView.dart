@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class ImageView extends StatefulWidget {
   var url;
@@ -20,9 +21,9 @@ class _ImageViewState extends State<ImageView> {
         Expanded(
           child: CachedNetworkImage(
             imageUrl: widget.url,
-            placeholder: (context, url) => Transform.scale(
-              scale: 0.3,
-              child: const CircularProgressIndicator(),
+            placeholder: (context, url) => SpinKitDualRing(
+              color: Theme.of(context).canvasColor,
+              size: 50.0,
             ),
             errorWidget: (context, url, error) => const Icon(Icons.error),
           ),

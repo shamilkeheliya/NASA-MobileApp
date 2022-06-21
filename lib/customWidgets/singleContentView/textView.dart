@@ -28,6 +28,7 @@ class TextView extends StatelessWidget {
                   color: textColor,
                 ),
               ),
+              const SizedBox(height: 5),
               Text(
                 description,
                 maxLines: 10,
