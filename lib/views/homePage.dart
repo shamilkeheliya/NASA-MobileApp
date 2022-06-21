@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:nasa_mobileapp/customWidgets/homePageTopIcons.dart';
+import 'package:nasa_mobileapp/customWidgets/yearTestField.dart';
 import 'package:nasa_mobileapp/themeData/theme_manager.dart';
 import 'package:nasa_mobileapp/utilities/background.dart';
 import 'package:nasa_mobileapp/views/viewList.dart';
@@ -170,78 +171,110 @@ class _HomePageState extends State<HomePage> {
       visible: showFilters,
       child: Row(
         children: [
-          Flexible(
-            child: TextField(
-              controller: year_startTEC,
-              onChanged: (value) {
-                setState(() {
-                  year_start = value;
-                });
-              },
-              maxLength: 4,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                hintText: 'Start Year',
-                border: const OutlineInputBorder(),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Theme.of(context).canvasColor,
-                  ),
-                ),
-                suffixIcon: Visibility(
-                  visible: year_start != '',
-                  child: IconButton(
-                    onPressed: () {
-                      year_startTEC.clear();
-                      setState(() {
-                        year_start = '';
-                      });
-                    },
-                    icon: Icon(
-                      Icons.clear,
-                      color: Theme.of(context).canvasColor,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+          // Flexible(
+          //   child: TextField(
+          //     controller: year_startTEC,
+          //     onChanged: (value) {
+          //       setState(() {
+          //         year_start = value;
+          //       });
+          //     },
+          //     maxLength: 4,
+          //     keyboardType: TextInputType.number,
+          //     decoration: InputDecoration(
+          //       hintText: 'Start Year',
+          //       border: const OutlineInputBorder(),
+          //       focusedBorder: OutlineInputBorder(
+          //         borderSide: BorderSide(
+          //           color: Theme.of(context).canvasColor,
+          //         ),
+          //       ),
+          //       suffixIcon: Visibility(
+          //         visible: year_start != '',
+          //         child: IconButton(
+          //           onPressed: () {
+          //             year_startTEC.clear();
+          //             setState(() {
+          //               year_start = '';
+          //             });
+          //           },
+          //           icon: Icon(
+          //             Icons.clear,
+          //             color: Theme.of(context).canvasColor,
+          //           ),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
+          CustomYearTextField(
+            hintText: 'Start Year',
+            controller: year_startTEC,
+            onChanged: (value) {
+              setState(() {
+                year_start = value;
+              });
+            },
+            visible: year_start != '',
+            onPressed: () {
+              year_startTEC.clear();
+              setState(() {
+                year_start = '';
+              });
+            },
           ),
           const SizedBox(width: 10),
-          Flexible(
-            child: TextField(
-              controller: year_endTEC,
-              onChanged: (value) {
-                setState(() {
-                  year_end = value;
-                });
-              },
-              maxLength: 4,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                hintText: 'End Year',
-                border: const OutlineInputBorder(),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Theme.of(context).canvasColor,
-                  ),
-                ),
-                suffixIcon: Visibility(
-                  visible: year_end != '',
-                  child: IconButton(
-                    onPressed: () {
-                      year_endTEC.clear();
-                      setState(() {
-                        year_end = '';
-                      });
-                    },
-                    icon: Icon(
-                      Icons.clear,
-                      color: Theme.of(context).canvasColor,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+          // Flexible(
+          //   child: TextField(
+          //     controller: year_endTEC,
+          //     onChanged: (value) {
+          //       setState(() {
+          //         year_end = value;
+          //       });
+          //     },
+          //     maxLength: 4,
+          //     keyboardType: TextInputType.number,
+          //     decoration: InputDecoration(
+          //       hintText: 'End Year',
+          //       border: const OutlineInputBorder(),
+          //       focusedBorder: OutlineInputBorder(
+          //         borderSide: BorderSide(
+          //           color: Theme.of(context).canvasColor,
+          //         ),
+          //       ),
+          //       suffixIcon: Visibility(
+          //         visible: year_end != '',
+          //         child: IconButton(
+          //           onPressed: () {
+          //             year_endTEC.clear();
+          //             setState(() {
+          //               year_end = '';
+          //             });
+          //           },
+          //           icon: Icon(
+          //             Icons.clear,
+          //             color: Theme.of(context).canvasColor,
+          //           ),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
+          CustomYearTextField(
+            hintText: 'End Year',
+            controller: year_endTEC,
+            onChanged: (value) {
+              setState(() {
+                year_end = value;
+              });
+            },
+            visible: year_end != '',
+            onPressed: () {
+              year_endTEC.clear();
+              setState(() {
+                year_end = '';
+              });
+            },
           ),
         ],
       ),
