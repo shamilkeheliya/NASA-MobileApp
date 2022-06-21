@@ -1,18 +1,21 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:nasa_mobileapp/utilities/sql.dart';
 import 'package:http/http.dart' as http;
 
 class OtherImagesView extends StatefulWidget {
-  String url;
-  OtherImagesView(this.url);
+  String jsonURL;
+  Color color;
+  OtherImagesView({
+    required this.jsonURL,
+    required this.color,
+  });
+
   @override
   _OtherImagesViewState createState() => _OtherImagesViewState();
 }
 
 class _OtherImagesViewState extends State<OtherImagesView> {
-  API api = new API();
   List otherImages = [];
 
   @override
@@ -22,7 +25,7 @@ class _OtherImagesViewState extends State<OtherImagesView> {
   }
 
   getData() async {
-    http.Response response = await http.get(Uri.parse(widget.url));
+    http.Response response = await http.get(Uri.parse(widget.jsonURL));
     if (response.statusCode == 200) {
       setState(() {
         //isLoading = false;
@@ -36,8 +39,8 @@ class _OtherImagesViewState extends State<OtherImagesView> {
   @override
   Widget build(BuildContext context) {
     return otherImages.toString() == '[]'
-        ? const SpinKitPouringHourGlassRefined(
-            color: Colors.black,
+        ? SpinKitPouringHourGlassRefined(
+            color: widget.color,
             size: 50.0,
           )
         : Wrap(
