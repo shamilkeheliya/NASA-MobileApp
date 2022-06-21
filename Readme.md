@@ -9,6 +9,11 @@ This mobile application was created for the NASA image library using Flutter.
 # Features
  - Working on both Android and iOS devices
 
+# To Do
+ - Function to save images to device
+ - Add Lazy Loader to the ListView
+ - Add Button to go to the Next Page
+
 # ScreenShots
 ### Light Theme
 ![Screenshot](./ScreenShots/L1.png) Home | ![Screenshot](./ScreenShots/L2.png) Home with Filters
