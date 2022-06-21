@@ -60,7 +60,6 @@ class _ViewListState extends State<ViewList> {
               //print(list[index]);
             },
             child: CustomDetailCard(
-              index: index.toString(),
               title: list[index]['data'][0]['title'],
               description: list[index]['data'][0]['description'],
               image: list[index]['links'][0]['href'],
@@ -88,7 +87,6 @@ class _ViewListState extends State<ViewList> {
           context,
           MaterialPageRoute(
               builder: (context) => SingleContentViewPage(
-                    index: index.toString(),
                     data: data,
                     imageURL: imageURL,
                   )));

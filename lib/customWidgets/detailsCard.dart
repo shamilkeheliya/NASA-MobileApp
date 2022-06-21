@@ -3,10 +3,9 @@ import 'package:flutter/widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 class CustomDetailCard extends StatelessWidget {
-  late String index, title, description, image;
+  late String title, description, image;
 
   CustomDetailCard({
-    required this.index,
     required this.title,
     required this.description,
     required this.image,
@@ -54,16 +53,13 @@ class CustomDetailCard extends StatelessWidget {
             SizedBox(
               height: 100,
               width: 100,
-              child: Hero(
-                tag: 'hero$index',
-                child: CachedNetworkImage(
-                  imageUrl: image,
-                  placeholder: (context, url) => Transform.scale(
-                    scale: 0.3,
-                    child: const CircularProgressIndicator(),
-                  ),
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
+              child: CachedNetworkImage(
+                imageUrl: image,
+                placeholder: (context, url) => Transform.scale(
+                  scale: 0.3,
+                  child: const CircularProgressIndicator(),
                 ),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ),
           ],

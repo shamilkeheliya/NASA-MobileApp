@@ -6,10 +6,9 @@ import 'package:nasa_mobileapp/utilities/background.dart';
 import 'package:provider/provider.dart';
 
 class SingleContentViewPage extends StatefulWidget {
-  String index, imageURL;
+  String imageURL;
   var data;
   SingleContentViewPage({
-    required this.index,
     required this.data,
     required this.imageURL,
   });
@@ -48,7 +47,6 @@ class _SingleContentViewPageState extends State<SingleContentViewPage> {
           textColor: Theme.of(context).canvasColor,
         ),
         ImageView(
-          index: widget.index,
           url: widget.imageURL,
         ),
       ],
