@@ -12,7 +12,7 @@ class ThemeNotifier with ChangeNotifier {
     accentIconTheme: const IconThemeData(color: Colors.black),
     dividerColor: Colors.black12,
     canvasColor: Colors.white,
-    cardColor: Colors.blueAccent,
+    cardColor: const Color(0x77021f6f),
   );
 
   final lightTheme = ThemeData(
@@ -25,6 +25,7 @@ class ThemeNotifier with ChangeNotifier {
     dividerColor: Colors.white54,
     //canvasColor: const Color(0xFF021f4f),
     canvasColor: const Color(0xFF0B3D91),
+    cardColor: Colors.white,
   );
 
   ThemeData _themeData = ThemeData(

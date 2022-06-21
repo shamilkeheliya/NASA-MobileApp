@@ -14,7 +14,7 @@ class CustomDetailCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Theme.of(context).primaryColor,
+      color: Theme.of(context).cardColor,
       elevation: 5,
       child: Padding(
         padding: const EdgeInsets.all(8.0),

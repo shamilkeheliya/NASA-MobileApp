@@ -15,4 +15,3 @@ This mobile application was created for the NASA image library using Flutter.
 - [modal_progress_hud_nsn](https://pub.dev/packages/modal_progress_hud_nsn)
 - [url_launcher](https://pub.dev/packages/url_launcher)
 - [cached_network_image](https://pub.dev/packages/cached_network_image)
-
