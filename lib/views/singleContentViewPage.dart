@@ -1,12 +1,10 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:nasa_mobileapp/customWidgets/singleContentView/imageView.dart';
+import 'package:nasa_mobileapp/customWidgets/singleContentView/otherImages.dart';
 import 'package:nasa_mobileapp/customWidgets/singleContentView/textView.dart';
 import 'package:nasa_mobileapp/themeData/theme_manager.dart';
 import 'package:nasa_mobileapp/utilities/background.dart';
 import 'package:provider/provider.dart';
-import 'package:http/http.dart' as http;
 
 class SingleContentViewPage extends StatefulWidget {
   String index;
@@ -20,27 +18,6 @@ class SingleContentViewPage extends StatefulWidget {
 GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey();
 
 class _SingleContentViewPageState extends State<SingleContentViewPage> {
-  late List otherImages;
-
-  @override
-  void initState() {
-    super.initState();
-    //print(widget.data['href']);
-    getData();
-  }
-
-  getData() async {
-    http.Response response = await http.get(Uri.parse(widget.data['href']));
-    if (response.statusCode == 200) {
-      setState(() {
-        //isLoading = false;
-      });
-
-      otherImages = jsonDecode(response.body);
-      print(otherImages);
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Consumer<ThemeNotifier>(
@@ -70,6 +47,7 @@ class _SingleContentViewPageState extends State<SingleContentViewPage> {
           title: widget.data['data'][0]['title'],
           description: widget.data['data'][0]['description'],
         ),
+        OtherImagesView(widget.data['href']),
       ],
     );
   }
