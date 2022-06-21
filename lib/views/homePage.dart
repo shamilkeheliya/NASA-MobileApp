@@ -340,8 +340,7 @@ class _HomePageState extends State<HomePage> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) =>
-              ViewList(url, data, Theme.of(context).brightness),
+          builder: (context) => ViewList(url, data),
         ),
       );
       //print(data);

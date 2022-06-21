@@ -3,9 +3,10 @@ import 'package:flutter/widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 class CustomDetailCard extends StatelessWidget {
-  late String title, description, image;
+  late String index, title, description, image;
 
   CustomDetailCard({
+    required this.index,
     required this.title,
     required this.description,
     required this.image,
@@ -54,7 +55,7 @@ class CustomDetailCard extends StatelessWidget {
               height: 100,
               width: 100,
               child: Hero(
-                tag: 'heroImage',
+                tag: 'hero$index',
                 child: CachedNetworkImage(
                   imageUrl: image,
                   placeholder: (context, url) => Transform.scale(

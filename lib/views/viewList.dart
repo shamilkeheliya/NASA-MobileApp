@@ -8,8 +8,8 @@ import 'package:nasa_mobileapp/views/singleContentViewPage.dart';
 import 'package:provider/provider.dart';
 
 class ViewList extends StatefulWidget {
-  late var url, data, theme;
-  ViewList(this.url, this.data, this.theme);
+  late var url, data;
+  ViewList(this.url, this.data);
 
   @override
   _ViewListState createState() => _ViewListState();
@@ -48,10 +48,11 @@ class _ViewListState extends State<ViewList> {
           itemBuilder: (context, index) => MaterialButton(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
             onPressed: () {
-              //changePage(list[index]);
-              print(list[index]['links'][0]['href']);
+              changePage(index, list[index]);
+              //print(list[index]['links'][0]['href']);
             },
             child: CustomDetailCard(
+              index: index.toString(),
               title: list[index]['data'][0]['title'],
               description: list[index]['data'][0]['description'],
               image: list[index]['links'][0]['href'],
@@ -63,10 +64,11 @@ class _ViewListState extends State<ViewList> {
     );
   }
 
-  void changePage(data) {
+  void changePage(index, data) {
     Navigator.push(
         context,
         MaterialPageRoute(
-            builder: (context) => SingleContentViewPage(widget.theme, data)));
+            builder: (context) =>
+                SingleContentViewPage(index.toString(), data)));
   }
 }
