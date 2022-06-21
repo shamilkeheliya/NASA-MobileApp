@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nasa_mobileapp/customWidgets/customElevatedButton.dart';
 import 'package:nasa_mobileapp/customWidgets/singleContentView/imageView.dart';
 import 'package:nasa_mobileapp/customWidgets/singleContentView/textView.dart';
 import 'package:nasa_mobileapp/themeData/theme_manager.dart';
@@ -48,6 +49,13 @@ class _SingleContentViewPageState extends State<SingleContentViewPage> {
         ),
         ImageView(
           url: widget.imageURL,
+        ),
+        Padding(
+          padding: const EdgeInsets.all(15),
+          child: CustomElevatedButton(
+            text: 'SAVE IMAGE',
+            onPressed: () {},
+          ),
         ),
       ],
     );
