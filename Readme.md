@@ -4,7 +4,7 @@
 This mobile application was created for the NASA image library using Flutter.
 
 ### Light Theme
-| ![Screenshot](./ScreenShots/L1.png) Home | ![Screenshot](./ScreenShots/L2.png) Home with Filters | ![Screenshot](./ScreenShots/L3.png) ListView |
+| ![Screenshot](./ScreenShots/L1.png) Home | ![Screenshot](./ScreenShots/L2.png) Home with Filters | ![Screenshot](./ScreenShots/L3.png) ListView
 ### Dark Theme
 
 ## Libraries
