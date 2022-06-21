@@ -22,6 +22,12 @@ GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey();
 
 class _SingleContentViewPageState extends State<SingleContentViewPage> {
   @override
+  void initState() {
+    super.initState();
+    print(widget.data);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Consumer<ThemeNotifier>(
       builder: (context, theme, child) => Scaffold(
@@ -45,6 +51,7 @@ class _SingleContentViewPageState extends State<SingleContentViewPage> {
         TextView(
           title: widget.data['data'][0]['title'],
           description: widget.data['data'][0]['description'],
+          date_created: widget.data['data'][0]['date_created'],
           textColor: Theme.of(context).canvasColor,
         ),
         ImageView(
