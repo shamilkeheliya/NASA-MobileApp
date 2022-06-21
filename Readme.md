@@ -6,6 +6,8 @@ This mobile application was created for the NASA image library using Flutter.
 
 <a href="https://www.buymeacoffee.com/shamilkeheliya"> <img src="https://cdn.buymeacoffee.com/buttons/v2/default-orange.png" height="50" width="210" alt="shamilkeheliya"/></a>
 
+## Features
+
 ## ScreenShots
 ### Light Theme
 ![Screenshot](./ScreenShots/L1.png) Home | ![Screenshot](./ScreenShots/L2.png) Home with Filters
@@ -16,6 +18,7 @@ This mobile application was created for the NASA image library using Flutter.
 ![Screenshot](./ScreenShots/D1.png) Home | ![Screenshot](./ScreenShots/D2.png) Home with Filters
 :-------------------------:|:-------------------------:
 ![Screenshot](./ScreenShots/D3.png) ListView | ![Screenshot](./ScreenShots/D4.png) Single Content View
+
 
 ## Libraries
 - [http](https://pub.dev/packages/http)

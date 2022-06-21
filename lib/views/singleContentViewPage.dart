@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:image_downloader/image_downloader.dart';
 import 'package:nasa_mobileapp/customWidgets/customElevatedButton.dart';
 import 'package:nasa_mobileapp/customWidgets/singleContentView/imageView.dart';
 import 'package:nasa_mobileapp/customWidgets/singleContentView/textView.dart';
@@ -61,10 +63,30 @@ class _SingleContentViewPageState extends State<SingleContentViewPage> {
           padding: const EdgeInsets.all(15),
           child: CustomElevatedButton(
             text: 'SAVE IMAGE',
-            onPressed: () {},
+            onPressed: () {
+              downloadImage(widget.imageURL);
+            },
           ),
         ),
       ],
     );
+  }
+
+  downloadImage(url) async {
+    try {
+      // Saved with this method.
+      var imageId = await ImageDownloader.downloadImage(url);
+      if (imageId == null) {
+        return;
+      }
+
+      // Below is a method of obtaining saved image information.
+      var fileName = await ImageDownloader.findName(imageId);
+      var path = await ImageDownloader.findPath(imageId);
+      var size = await ImageDownloader.findByteSize(imageId);
+      var mimeType = await ImageDownloader.findMimeType(imageId);
+    } on PlatformException catch (error) {
+      print(error);
+    }
   }
 }
