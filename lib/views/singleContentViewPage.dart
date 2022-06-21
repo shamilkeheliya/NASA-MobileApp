@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:nasa_mobileapp/customWidgets/singleContentView/imageView.dart';
+import 'package:nasa_mobileapp/customWidgets/singleContentView/textView.dart';
 import 'package:nasa_mobileapp/themeData/theme_manager.dart';
 import 'package:nasa_mobileapp/utilities/background.dart';
 import 'package:provider/provider.dart';
@@ -64,6 +65,10 @@ class _SingleContentViewPageState extends State<SingleContentViewPage> {
         ImageView(
           index: widget.index,
           url: widget.data['links'][0]['href'],
+        ),
+        TextView(
+          title: widget.data['data'][0]['title'],
+          description: widget.data['data'][0]['description'],
         ),
       ],
     );
