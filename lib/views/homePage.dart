@@ -29,8 +29,6 @@ class _HomePageState extends State<HomePage> {
   TextEditingController year_startTEC = TextEditingController();
   TextEditingController year_endTEC = TextEditingController();
 
-  GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey();
-
   @override
   Widget build(BuildContext context) {
     return Consumer<ThemeNotifier>(
@@ -40,7 +38,6 @@ class _HomePageState extends State<HomePage> {
         body: ModalProgressHUD(
           inAsyncCall: isLoading,
           child: Scaffold(
-            key: _scaffoldKey,
             backgroundColor: Theme.of(context).primaryColor,
             body: BackgroundBody(
               theme: theme,

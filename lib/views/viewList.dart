@@ -18,30 +18,36 @@ class ViewList extends StatefulWidget {
   _ViewListState createState() => _ViewListState();
 }
 
-GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey();
-
 class _ViewListState extends State<ViewList> {
   bool isLoading = false;
+
+  @override
+  void initState() {
+    super.initState();
+    print(widget.data['collection']['links']);
+  }
 
   @override
   Widget build(BuildContext context) {
     List list = widget.data['collection']['items'];
     API api = new API();
 
-    return Consumer<ThemeNotifier>(
-      builder: (context, theme, child) => Scaffold(
-        appBar: AppBar(toolbarHeight: 0),
-        backgroundColor: Theme.of(context).primaryColor,
-        body: ModalProgressHUD(
-          inAsyncCall: isLoading,
-          child: Scaffold(
-            key: _scaffoldKey,
-            backgroundColor: Theme.of(context).primaryColor,
-            body: BackgroundBody(
-              theme: theme,
-              child: buildBody(api, list),
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Consumer<ThemeNotifier>(
+        builder: (context, theme, child) => Scaffold(
+          appBar: AppBar(toolbarHeight: 0),
+          backgroundColor: Theme.of(context).primaryColor,
+          body: ModalProgressHUD(
+            inAsyncCall: isLoading,
+            child: Scaffold(
+              backgroundColor: Theme.of(context).primaryColor,
+              body: BackgroundBody(
+                theme: theme,
+                child: buildBody(api, list),
+              ),
+              floatingActionButton: GoHomeFloatingActionButton(),
             ),
-            floatingActionButton: GoHomeFloatingActionButton(),
           ),
         ),
       ),
