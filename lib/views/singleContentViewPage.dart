@@ -1,8 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_downloader/image_downloader.dart';
 import 'package:nasa_mobileapp/customWidgets/customElevatedButton.dart';
+import 'package:nasa_mobileapp/customWidgets/singleContentView/customSnackBar.dart';
 import 'package:nasa_mobileapp/customWidgets/singleContentView/imageView.dart';
+import 'package:nasa_mobileapp/customWidgets/singleContentView/showDownloading.dart';
 import 'package:nasa_mobileapp/customWidgets/singleContentView/textView.dart';
 import 'package:nasa_mobileapp/themeData/theme_manager.dart';
 import 'package:nasa_mobileapp/utilities/background.dart';
@@ -23,11 +26,7 @@ class SingleContentViewPage extends StatefulWidget {
 GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey();
 
 class _SingleContentViewPageState extends State<SingleContentViewPage> {
-  @override
-  void initState() {
-    super.initState();
-    print(widget.data);
-  }
+  bool isDownloading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -61,12 +60,14 @@ class _SingleContentViewPageState extends State<SingleContentViewPage> {
         ),
         Padding(
           padding: const EdgeInsets.all(15),
-          child: CustomElevatedButton(
-            text: 'SAVE IMAGE',
-            onPressed: () {
-              downloadImage(widget.imageURL);
-            },
-          ),
+          child: isDownloading
+              ? ShowDownloading()
+              : CustomElevatedButton(
+                  text: 'DOWNLOAD IMAGE',
+                  onPressed: () {
+                    //downloadImage(widget.imageURL);
+                  },
+                ),
         ),
       ],
     );
@@ -74,18 +75,35 @@ class _SingleContentViewPageState extends State<SingleContentViewPage> {
 
   downloadImage(url) async {
     try {
-      // Saved with this method.
-      var imageId = await ImageDownloader.downloadImage(url);
+      setState(() {
+        isDownloading = true;
+      });
+
+      String s = url;
+      int idx = s.indexOf(":");
+      String downloadURL = 'https:${s.substring(idx + 1).trim()}';
+
+      /// Download image
+      var imageId = await ImageDownloader.downloadImage(downloadURL);
+
       if (imageId == null) {
+        setState(() {
+          isDownloading = false;
+        });
+        ScaffoldMessenger.of(context).showSnackBar(failedSnackBar());
         return;
       }
 
-      // Below is a method of obtaining saved image information.
-      var fileName = await ImageDownloader.findName(imageId);
-      var path = await ImageDownloader.findPath(imageId);
-      var size = await ImageDownloader.findByteSize(imageId);
-      var mimeType = await ImageDownloader.findMimeType(imageId);
+      /// if success
+      setState(() {
+        isDownloading = false;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(successfulSnackBar());
     } on PlatformException catch (error) {
+      setState(() {
+        isDownloading = false;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(failedSnackBar());
       print(error);
     }
   }
