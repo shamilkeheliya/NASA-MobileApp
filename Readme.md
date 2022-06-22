@@ -9,7 +9,7 @@ This mobile application was created for the NASA image library using Flutter.
 # Features
  - Working on both Android and iOS devices
  - Download Images
- - Light & Dark themes
+ - [Light](https://github.com/shamilkeheliya/NASA-MobileApp#light-theme) & [Dark](https://github.com/shamilkeheliya/NASA-MobileApp#dark-theme) themes
  - Search with Staring Year & Ending Year
 
 # To Do
