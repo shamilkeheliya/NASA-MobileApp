@@ -17,15 +17,15 @@ This mobile application was created for the NASA image library using Flutter.
 
 # ScreenShots
 
-![Screenshot](./ScreenShots/icon.jpg) App Icon | ![Screenshot](./ScreenShots/L1.jpg) Splash Screen (Light Theme) | ![Screenshot](./ScreenShots/L2.jpg) Home (Light Theme)
+### Light Theme
+![Screenshot](./ScreenShots/L1.jpg) Splash Screen (Light Theme) | ![Screenshot](./ScreenShots/L2.jpg) Home (Light Theme) | ![Screenshot](./ScreenShots/L3.jpg) Home with Filters (Light Theme)
 :-------------------------:|:-------------------------:|:-------------------------:
-![Screenshot](./ScreenShots/L3.jpg) Home with Filters (Light Theme) | ![Screenshot](./ScreenShots/L4.jpg) Content List View (Light Theme) | ![Screenshot](./ScreenShots/L5.jpg) Single Content View (Light Theme)
+![Screenshot](./ScreenShots/L4.jpg) Content List View (Light Theme) | ![Screenshot](./ScreenShots/L5.jpg) Single Content View (Light Theme) | ![Screenshot](./ScreenShots/L6.jpg) While Image Downloading (Light Theme)
 
-![Screenshot](./ScreenShots/L6.jpg) While Image Downloading (Light Theme) | ![Screenshot](./ScreenShots/L7.jpg) Showing SnackBar (Light Theme) | ![Screenshot](./ScreenShots/D1.jpg) Splash Screen (Dark Theme)
+### Dark Theme
+![Screenshot](./ScreenShots/D1.jpg) Splash Screen (Dark Theme) | ![Screenshot](./ScreenShots/D2.jpg) Home (Light Theme) | ![Screenshot](./ScreenShots/D3.jpg) Home with Filters (Dark Theme)
 :-------------------------:|:-------------------------:|:-------------------------:
-![Screenshot](./ScreenShots/D2.jpg) Home (Light Theme) | ![Screenshot](./ScreenShots/D3.jpg) Home with Filters (Dark Theme) | ![Screenshot](./ScreenShots/D4.jpg) Content List View (Dark Theme)
-
-![Screenshot](./ScreenShots/D5.jpg) Single Content View (Dark Theme) | ![Screenshot](./ScreenShots/D6.jpg) While Image Downloading (Dark Theme) | ![Screenshot](./ScreenShots/D7.jpg) Showing SnackBar (Dark Theme)
+![Screenshot](./ScreenShots/D4.jpg) Content List View (Dark Theme) | ![Screenshot](./ScreenShots/D5.jpg) Single Content View (Dark Theme) | ![Screenshot](./ScreenShots/D6.jpg) While Image Downloading (Dark Theme)
 
 
 
