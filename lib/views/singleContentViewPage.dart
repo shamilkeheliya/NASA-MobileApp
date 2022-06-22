@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_downloader/image_downloader.dart';
 import 'package:nasa_mobileapp/customWidgets/customElevatedButton.dart';
+import 'package:nasa_mobileapp/customWidgets/customFloatingActionButton.dart';
 import 'package:nasa_mobileapp/customWidgets/singleContentView/customSnackBar.dart';
 import 'package:nasa_mobileapp/customWidgets/singleContentView/imageView.dart';
 import 'package:nasa_mobileapp/customWidgets/singleContentView/showDownloading.dart';
@@ -41,6 +42,7 @@ class _SingleContentViewPageState extends State<SingleContentViewPage> {
             theme: theme,
             child: buildBody(),
           ),
+          floatingActionButton: GoBackFloatingActionButton(),
         ),
       ),
     );
@@ -65,7 +67,7 @@ class _SingleContentViewPageState extends State<SingleContentViewPage> {
               : CustomElevatedButton(
                   text: 'DOWNLOAD IMAGE',
                   onPressed: () {
-                    //downloadImage(widget.imageURL);
+                    downloadImage(widget.imageURL);
                   },
                 ),
         ),

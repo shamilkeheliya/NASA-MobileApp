@@ -41,7 +41,7 @@ class _ViewListState extends State<ViewList> {
               theme: theme,
               child: buildBody(api, list),
             ),
-            floatingActionButton: const GoHomeFloatingActionButton(),
+            floatingActionButton: GoHomeFloatingActionButton(),
           ),
         ),
       ),
