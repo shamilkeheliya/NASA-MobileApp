@@ -21,6 +21,7 @@ dependencies:
   image_downloader: ^0.31.0
 
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

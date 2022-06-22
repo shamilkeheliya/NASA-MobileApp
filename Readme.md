@@ -14,7 +14,6 @@ This mobile application was created for the NASA image library using Flutter.
 
 # To Do
  - Download Images for iOS
- - Add Lazy Loader to the ListView
  - Add Button to go to the Next Page
 
 # ScreenShots
