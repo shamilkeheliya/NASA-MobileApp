@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:nasa_mobileapp/customWidgets/changePageButtons.dart';
 import 'package:nasa_mobileapp/customWidgets/customFloatingActionButton.dart';
 import 'package:nasa_mobileapp/customWidgets/detailsCard.dart';
 import 'package:nasa_mobileapp/themeData/theme_manager.dart';
@@ -22,12 +23,6 @@ class _ViewListState extends State<ViewList> {
   bool isLoading = false;
 
   @override
-  void initState() {
-    super.initState();
-    print(widget.data['collection']['links']);
-  }
-
-  @override
   Widget build(BuildContext context) {
     List list = widget.data['collection']['items'];
     API api = new API();
@@ -44,9 +39,33 @@ class _ViewListState extends State<ViewList> {
               backgroundColor: Theme.of(context).primaryColor,
               body: BackgroundBody(
                 theme: theme,
-                child: buildBody(api, list),
+                child: Column(
+                  children: [
+                    ChangePageButtons(data: widget.data['collection']['links']),
+                    Flexible(
+                      child: buildBody(api, list),
+                    ),
+                  ],
+                ),
               ),
-              floatingActionButton: GoHomeFloatingActionButton(),
+              //floatingActionButton: GoHomeFloatingActionButton(),
+              floatingActionButtonLocation:
+                  FloatingActionButtonLocation.centerFloat,
+              floatingActionButton: Stack(
+                fit: StackFit.expand,
+                children: [
+                  Positioned(
+                    left: 10,
+                    bottom: 0,
+                    child: ChangePageFloatingActionButton(),
+                  ),
+                  Positioned(
+                    bottom: 0,
+                    right: 10,
+                    child: GoHomeFloatingActionButton(),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
