@@ -17,14 +17,12 @@ This mobile application was created for the NASA image library using Flutter.
 
 # ScreenShots
 ### Light Theme
-![Screenshot](./ScreenShots/L1.png) Home | ![Screenshot](./ScreenShots/L2.png) Home with Filters
-:-------------------------:|:-------------------------:
-![Screenshot](./ScreenShots/L3.png) ListView | ![Screenshot](./ScreenShots/L4.png) Single Content View
+![Screenshot](./ScreenShots/L1.png) Home ![Screenshot](./ScreenShots/L2.png) Home with Filters
+![Screenshot](./ScreenShots/L3.png) ListView ![Screenshot](./ScreenShots/L4.png) Single Content View
 
 ### Dark Theme
-![Screenshot](./ScreenShots/D1.png) Home | ![Screenshot](./ScreenShots/D2.png) Home with Filters
-:-------------------------:|:-------------------------:
-![Screenshot](./ScreenShots/D3.png) ListView | ![Screenshot](./ScreenShots/D4.png) Single Content View
+![Screenshot](./ScreenShots/D1.png) Home ![Screenshot](./ScreenShots/D2.png) Home with Filters
+![Screenshot](./ScreenShots/D3.png) ListView ![Screenshot](./ScreenShots/D4.png) Single Content View
 
 
 # Libraries
