@@ -17,15 +17,15 @@ This mobile application was created for the NASA image library using Flutter.
 
 # ScreenShots
 
-![Screenshot](./ScreenShots/icon.png) App Icon | ![Screenshot](./ScreenShots/L1.png) Splash Screen (Light Theme) | ![Screenshot](./ScreenShots/L2.png) Home (Light Theme)
+![Screenshot](./ScreenShots/icon.jpg) App Icon | ![Screenshot](./ScreenShots/L1.jpg) Splash Screen (Light Theme) | ![Screenshot](./ScreenShots/L2.jpg) Home (Light Theme)
 :-------------------------:|:-------------------------:|:-------------------------:
-![Screenshot](./ScreenShots/L3.png) Home with Filters (Light Theme) | ![Screenshot](./ScreenShots/L4.png) Content List View (Light Theme) | ![Screenshot](./ScreenShots/L5.png) Single Content View (Light Theme)
+![Screenshot](./ScreenShots/L3.jpg) Home with Filters (Light Theme) | ![Screenshot](./ScreenShots/L4.jpg) Content List View (Light Theme) | ![Screenshot](./ScreenShots/L5.jpg) Single Content View (Light Theme)
 :-------------------------:|:-------------------------:|:-------------------------:
-![Screenshot](./ScreenShots/L6.png) While Image Downloading (Light Theme) | ![Screenshot](./ScreenShots/L7.png) Showing SnackBar (Light Theme) | ![Screenshot](./ScreenShots/D1.png) Splash Screen (Dark Theme)
+![Screenshot](./ScreenShots/L6.jpg) While Image Downloading (Light Theme) | ![Screenshot](./ScreenShots/L7.jpg) Showing SnackBar (Light Theme) | ![Screenshot](./ScreenShots/D1.jpg) Splash Screen (Dark Theme)
 :-------------------------:|:-------------------------:|:-------------------------:
-![Screenshot](./ScreenShots/D2.png) Home (Light Theme) | ![Screenshot](./ScreenShots/D3.png) Home with Filters (Dark Theme) | ![Screenshot](./ScreenShots/D4.png) Content List View (Dark Theme)
+![Screenshot](./ScreenShots/D2.jpg) Home (Light Theme) | ![Screenshot](./ScreenShots/D3.jpg) Home with Filters (Dark Theme) | ![Screenshot](./ScreenShots/D4.jpg) Content List View (Dark Theme)
 :-------------------------:|:-------------------------:|:-------------------------:
-![Screenshot](./ScreenShots/D5.png) Single Content View (Dark Theme) | ![Screenshot](./ScreenShots/D6.png) While Image Downloading (Dark Theme) | ![Screenshot](./ScreenShots/D7.png) Showing SnackBar (Dark Theme)
+![Screenshot](./ScreenShots/D5.jpg) Single Content View (Dark Theme) | ![Screenshot](./ScreenShots/D6.jpg) While Image Downloading (Dark Theme) | ![Screenshot](./ScreenShots/D7.jpg) Showing SnackBar (Dark Theme)
 
 
 
