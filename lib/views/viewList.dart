@@ -48,20 +48,17 @@ class _ViewListState extends State<ViewList> {
                   ],
                 ),
               ),
-              //floatingActionButton: GoHomeFloatingActionButton(),
               floatingActionButtonLocation:
                   FloatingActionButtonLocation.centerFloat,
-              floatingActionButton: Stack(
-                fit: StackFit.expand,
+              floatingActionButton: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Positioned(
-                    left: 10,
-                    bottom: 0,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
                     child: ChangePageFloatingActionButton(),
                   ),
-                  Positioned(
-                    bottom: 0,
-                    right: 10,
+                  Padding(
+                    padding: const EdgeInsets.only(right: 10),
                     child: GoHomeFloatingActionButton(),
                   ),
                 ],

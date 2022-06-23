@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage> {
                                 searchKey = value;
                               });
                             },
-                            autofocus: true,
+                            autofocus: false,
                             style:
                                 TextStyle(color: Theme.of(context).canvasColor),
                             controller: searchKeyTEC,
