@@ -1,4 +1,4 @@
-# NASA Images (Under Development)
+# NASA Images
 ### Mobile Application - Flutter
 
 This mobile application was created for the NASA image library using Flutter.
@@ -13,18 +13,17 @@ This mobile application was created for the NASA image library using Flutter.
  - Search with Staring Year & Ending Year
  - Go through the pages
 
-
 # ScreenShots
 
 ### Light Theme
 ![Screenshot](./ScreenShots/L1.jpg) Splash Screen | ![Screenshot](./ScreenShots/L2.jpg) Home | ![Screenshot](./ScreenShots/L3.jpg) Home with Filters
 :-------------------------:|:-------------------------:|:-------------------------:
-![Screenshot](./ScreenShots/L4.jpg) Content List View | ![Screenshot](./ScreenShots/L5.jpg) Single Content View | ![Screenshot](./ScreenShots/L6.jpg) Showing SnackBar
+![Screenshot](./ScreenShots/L4.jpg) Content List View | ![Screenshot](./ScreenShots/L5.jpg) Page Navigation | ![Screenshot](./ScreenShots/L6.jpg) Single Content View
 
 ### Dark Theme
 ![Screenshot](./ScreenShots/D1.jpg) Splash Screen | ![Screenshot](./ScreenShots/D2.jpg) Home | ![Screenshot](./ScreenShots/D3.jpg) Home with Filters
 :-------------------------:|:-------------------------:|:-------------------------:
-![Screenshot](./ScreenShots/D4.jpg) Content List View | ![Screenshot](./ScreenShots/D5.jpg) Single Content View | ![Screenshot](./ScreenShots/D6.jpg) Showing SnackBar
+![Screenshot](./ScreenShots/D4.jpg) Content List View | ![Screenshot](./ScreenShots/D5.jpg) Page Navigation | ![Screenshot](./ScreenShots/D6.jpg) Single Content View
 
 
 
