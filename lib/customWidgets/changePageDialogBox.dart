@@ -99,15 +99,12 @@ class _ChangePageDialogBoxState extends State<ChangePageDialogBox> {
   }
 
   changePage(String url) async {
-    int idx = url.indexOf("=");
-    //String downloadURL = 'https:${url.substring(idx + 1).trim()}';
-    print(url.substring(0, idx).trim());
-    print(url.substring(idx + 1).trim());
-
-    /*setState(() {
+    setState(() {
       widget.isLoading(true);
       isVisiable = false;
     });
+
+    String pageNumber = getPageNumber(url);
 
     http.Response response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
@@ -122,10 +119,29 @@ class _ChangePageDialogBoxState extends State<ChangePageDialogBox> {
           builder: (context) => ViewList(
             url: url,
             data: data,
-            pageNumber: 1,
+            pageNumber: pageNumber,
           ),
         ),
       );
-    }*/
+    }
+  }
+
+  String getPageNumber(String url) {
+    bool isSearching = true;
+    String pageNumber = '';
+    int idx;
+
+    while (isSearching) {
+      idx = url.indexOf("&");
+      url = url.substring(idx + 1).trim();
+
+      idx = url.indexOf("=");
+      if (url.substring(0, idx).trim() == 'page') {
+        isSearching = false;
+        pageNumber = url.substring(idx + 1).trim();
+      }
+    }
+
+    return pageNumber;
   }
 }

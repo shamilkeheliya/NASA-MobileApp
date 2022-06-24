@@ -6,6 +6,7 @@ class GoHomeFloatingActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
+      heroTag: 'goHome',
       onPressed: () {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => HomePage()));
@@ -50,6 +51,7 @@ class ChangePageFloatingActionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return data != null
         ? FloatingActionButton(
+            heroTag: 'changePage',
             onPressed: () {
               showDialog(
                   context: context,
