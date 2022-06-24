@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nasa_mobileapp/customWidgets/customElevatedButton.dart';
 import 'package:http/http.dart' as http;
+import 'package:nasa_mobileapp/customWidgets/dialogBoxButton.dart';
 
 class ChangePageButtons extends StatefulWidget {
   var data;
@@ -68,4 +70,48 @@ class _ChangePageButtonsState extends State<ChangePageButtons> {
   }
 
   changePage() {}
+}
+
+class ChangePageDialogBox extends StatefulWidget {
+  var data, pageNumber;
+
+  ChangePageDialogBox({
+    required this.data,
+    required this.pageNumber,
+  });
+
+  @override
+  _ChangePageDialogBoxState createState() => _ChangePageDialogBoxState();
+}
+
+class _ChangePageDialogBoxState extends State<ChangePageDialogBox> {
+  bool isPrevious = true, isNext = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      backgroundColor: Theme.of(context).primaryColor,
+      content: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          DialogBoxArrowButton(
+            onPressed: () {},
+            visible: isPrevious,
+            iconData: Icons.chevron_left,
+          ),
+          Text(
+            'Page ${widget.pageNumber}',
+            style: TextStyle(
+              color: Theme.of(context).canvasColor,
+            ),
+          ),
+          DialogBoxArrowButton(
+            onPressed: () {},
+            visible: isNext,
+            iconData: Icons.chevron_right,
+          ),
+        ],
+      ),
+    );
+  }
 }

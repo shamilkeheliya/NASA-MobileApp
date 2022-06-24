@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'package:nasa_mobileapp/customWidgets/changePageButtons.dart';
 import 'package:nasa_mobileapp/customWidgets/customFloatingActionButton.dart';
 import 'package:nasa_mobileapp/customWidgets/detailsCard.dart';
 import 'package:nasa_mobileapp/themeData/theme_manager.dart';
@@ -39,14 +38,7 @@ class _ViewListState extends State<ViewList> {
               backgroundColor: Theme.of(context).primaryColor,
               body: BackgroundBody(
                 theme: theme,
-                child: Column(
-                  children: [
-                    ChangePageButtons(data: widget.data['collection']['links']),
-                    Flexible(
-                      child: buildBody(api, list),
-                    ),
-                  ],
-                ),
+                child: buildBody(api, list),
               ),
               floatingActionButtonLocation:
                   FloatingActionButtonLocation.centerFloat,
@@ -55,7 +47,10 @@ class _ViewListState extends State<ViewList> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
-                    child: ChangePageFloatingActionButton(),
+                    child: ChangePageFloatingActionButton(
+                      data: widget.data['collection']['links'],
+                      pageNumber: 1,
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 10),

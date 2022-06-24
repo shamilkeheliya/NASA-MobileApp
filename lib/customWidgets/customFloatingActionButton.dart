@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nasa_mobileapp/customWidgets/changePageDialogBox.dart';
 import 'package:nasa_mobileapp/views/homePage.dart';
 
 class GoHomeFloatingActionButton extends StatelessWidget {
@@ -35,26 +36,35 @@ class GoBackFloatingActionButton extends StatelessWidget {
   }
 }
 
-class ChangePageFloatingActionButton extends StatefulWidget {
+class ChangePageFloatingActionButton extends StatelessWidget {
+  var data, pageNumber;
 
+  ChangePageFloatingActionButton({
+    required this.data,
+    required this.pageNumber,
+  });
 
-  @override
-  _ChangePageFloatingActionButtonState createState() =>
-      _ChangePageFloatingActionButtonState();
-}
-
-class _ChangePageFloatingActionButtonState
-    extends State<ChangePageFloatingActionButton> {
-  int pageNumber = 1;
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton(
-      onPressed: () {
-        showDialog(context: context, builder: )
-      },
-      tooltip: 'Page',
-      backgroundColor: Theme.of(context).canvasColor,
-      child: Text('Page\n$pageNumber'),
+    return Visibility(
+      visible: data != null,
+      child: FloatingActionButton(
+        onPressed: () {
+          showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return ChangePageDialogBox(
+                  data: data,
+                  pageNumber: pageNumber,
+                );
+              });
+        },
+        backgroundColor: Theme.of(context).canvasColor,
+        child: Text(
+          'Page\n$pageNumber',
+          textAlign: TextAlign.center,
+        ),
+      ),
     );
   }
 }
