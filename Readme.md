@@ -1,5 +1,5 @@
 # NASA Images
-### Mobile Application - Flutter
+###[Android APK](https://raw.githubusercontent.com/shamilkeheliya/NASA-MobileApp/main/NASA-Images.apk)
 
 This mobile application was created for the NASA image library using Flutter.
 
@@ -12,11 +12,6 @@ This mobile application was created for the NASA image library using Flutter.
  - [Light Theme](https://github.com/shamilkeheliya/NASA-MobileApp#light-theme) & [Dark Theme](https://github.com/shamilkeheliya/NASA-MobileApp#dark-theme)
  - Search with Staring Year & Ending Year
  - Go through the pages
-
-
-
-# App
-[Android APK](https://raw.githubusercontent.com/shamilkeheliya/NASA-MobileApp/main/NASA-Images.apk)
 
 
 
