@@ -1,5 +1,5 @@
 name: nasa_mobileapp
-description: Mobile App using NASA API
+description: Mobile App for NASA Image Library
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
