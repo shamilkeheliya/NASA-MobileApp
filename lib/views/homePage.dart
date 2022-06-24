@@ -257,7 +257,11 @@ class _HomePageState extends State<HomePage> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => ViewList(url, data),
+          builder: (context) => ViewList(
+            url: url,
+            data: data,
+            pageNumber: 1,
+          ),
         ),
       );
       //print(data);

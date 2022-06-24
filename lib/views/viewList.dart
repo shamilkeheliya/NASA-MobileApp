@@ -11,8 +11,12 @@ import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 
 class ViewList extends StatefulWidget {
-  late var url, data;
-  ViewList(this.url, this.data);
+  late var url, data, pageNumber;
+  ViewList({
+    required this.url,
+    required this.data,
+    required this.pageNumber,
+  });
 
   @override
   _ViewListState createState() => _ViewListState();
@@ -49,7 +53,7 @@ class _ViewListState extends State<ViewList> {
                     padding: const EdgeInsets.only(left: 10),
                     child: ChangePageFloatingActionButton(
                       data: widget.data['collection']['links'],
-                      pageNumber: 1,
+                      pageNumber: widget.pageNumber,
                       isLoading: (value) {
                         setState(() {
                           isLoading = value;

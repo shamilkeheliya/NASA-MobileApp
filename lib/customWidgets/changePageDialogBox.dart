@@ -99,7 +99,12 @@ class _ChangePageDialogBoxState extends State<ChangePageDialogBox> {
   }
 
   changePage(String url) async {
-    setState(() {
+    int idx = url.indexOf("=");
+    //String downloadURL = 'https:${url.substring(idx + 1).trim()}';
+    print(url.substring(0, idx).trim());
+    print(url.substring(idx + 1).trim());
+
+    /*setState(() {
       widget.isLoading(true);
       isVisiable = false;
     });
@@ -114,10 +119,13 @@ class _ChangePageDialogBoxState extends State<ChangePageDialogBox> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => ViewList(url, data),
+          builder: (context) => ViewList(
+            url: url,
+            data: data,
+            pageNumber: 1,
+          ),
         ),
       );
-      //print(data);
-    }
+    }*/
   }
 }
