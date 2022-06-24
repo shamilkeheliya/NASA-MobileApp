@@ -38,33 +38,35 @@ class GoBackFloatingActionButton extends StatelessWidget {
 
 class ChangePageFloatingActionButton extends StatelessWidget {
   var data, pageNumber;
+  late Function(bool) isLoading;
 
   ChangePageFloatingActionButton({
     required this.data,
     required this.pageNumber,
+    required this.isLoading,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Visibility(
-      visible: data != null,
-      child: FloatingActionButton(
-        onPressed: () {
-          showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return ChangePageDialogBox(
-                  data: data,
-                  pageNumber: pageNumber,
-                );
-              });
-        },
-        backgroundColor: Theme.of(context).canvasColor,
-        child: Text(
-          'Page\n$pageNumber',
-          textAlign: TextAlign.center,
-        ),
-      ),
-    );
+    return data != null
+        ? FloatingActionButton(
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return ChangePageDialogBox(
+                      data: data,
+                      pageNumber: pageNumber,
+                      isLoading: isLoading,
+                    );
+                  });
+            },
+            backgroundColor: Theme.of(context).canvasColor,
+            child: Text(
+              'Page\n$pageNumber',
+              textAlign: TextAlign.center,
+            ),
+          )
+        : const SizedBox();
   }
 }

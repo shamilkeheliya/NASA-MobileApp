@@ -50,6 +50,11 @@ class _ViewListState extends State<ViewList> {
                     child: ChangePageFloatingActionButton(
                       data: widget.data['collection']['links'],
                       pageNumber: 1,
+                      isLoading: (value) {
+                        setState(() {
+                          isLoading = value;
+                        });
+                      },
                     ),
                   ),
                   Padding(
