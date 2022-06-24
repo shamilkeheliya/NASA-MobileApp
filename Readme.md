@@ -11,10 +11,8 @@ This mobile application was created for the NASA image library using Flutter.
  - Download Images
  - [Light Theme](https://github.com/shamilkeheliya/NASA-MobileApp#light-theme) & [Dark Theme](https://github.com/shamilkeheliya/NASA-MobileApp#dark-theme)
  - Search with Staring Year & Ending Year
+ - Go through the pages
 
-# To Do
- - Download Images for iOS
- - Add Button to go to the Next Page
 
 # ScreenShots
 
