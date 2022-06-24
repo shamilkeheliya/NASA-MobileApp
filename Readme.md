@@ -39,4 +39,3 @@ This mobile application was created for the NASA image library using Flutter.
 - [cached_network_image](https://pub.dev/packages/cached_network_image)
 - [flutter_spinkit](https://pub.dev/packages/flutter_spinkit)
 - [image_downloader](https://pub.dev/packages/image_downloader)
-- [floating_action_bubble](https://pub.dev/packages/floating_action_bubble)

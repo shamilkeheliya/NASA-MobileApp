@@ -36,6 +36,8 @@ class GoBackFloatingActionButton extends StatelessWidget {
 }
 
 class ChangePageFloatingActionButton extends StatefulWidget {
+
+
   @override
   _ChangePageFloatingActionButtonState createState() =>
       _ChangePageFloatingActionButtonState();
@@ -43,12 +45,16 @@ class ChangePageFloatingActionButton extends StatefulWidget {
 
 class _ChangePageFloatingActionButtonState
     extends State<ChangePageFloatingActionButton> {
+  int pageNumber = 1;
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      onPressed: () {},
-      tooltip: 'Go Back',
+      onPressed: () {
+        showDialog(context: context, builder: )
+      },
+      tooltip: 'Page',
       backgroundColor: Theme.of(context).canvasColor,
+      child: Text('Page\n$pageNumber'),
     );
   }
 }
