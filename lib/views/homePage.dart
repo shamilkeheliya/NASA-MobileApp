@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:nasa_mobileapp/customWidgets/customElevatedButton.dart';
 import 'package:nasa_mobileapp/customWidgets/homePageTopIcons.dart';
+import 'package:nasa_mobileapp/customWidgets/singleContentView/customSnackBar.dart';
 import 'package:nasa_mobileapp/customWidgets/yearTestField.dart';
 import 'package:nasa_mobileapp/themeData/theme_manager.dart';
 import 'package:nasa_mobileapp/utilities/background.dart';
@@ -254,17 +255,22 @@ class _HomePageState extends State<HomePage> {
       });
 
       var data = jsonDecode(response.body);
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => ViewList(
-            url: url,
-            data: data,
-            pageNumber: 1,
+
+      if(data['collection']['items'].toString() == '[]'){
+        ScaffoldMessenger.of(context).showSnackBar(noDataSnackBar());
+      }
+      else{
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ViewList(
+              url: url,
+              data: data,
+              pageNumber: 1,
+            ),
           ),
-        ),
-      );
-      //print(data);
+        );
+      }
     }
   }
 }

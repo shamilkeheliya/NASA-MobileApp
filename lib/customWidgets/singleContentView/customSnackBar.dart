@@ -19,3 +19,13 @@ SnackBar failedSnackBar() {
     ),
   );
 }
+
+SnackBar noDataSnackBar() {
+  return SnackBar(
+    content: const Text('No Data to show'),
+    action: SnackBarAction(
+      label: 'OK',
+      onPressed: () {},
+    ),
+  );
+}
